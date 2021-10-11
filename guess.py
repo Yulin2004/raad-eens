@@ -1,86 +1,28 @@
+#random number
 import random
 
-#SETUP
+print ('hello can you guess the random number')
 
-guess = 0
-score = 0
+random_number= random.randint(1,10000)
 
-print('wat is je naam? ')
-myName = input()
+guess=None #the users guess
+attempts=0 #hoeveel keer geraden is
+guessed=False #foute antwoord
 
-number = random.randint(1, 10)
-print ('oke,' + myName+ ',raad het getal tussen 1 en 20.')
+while(not guessed):
+    guess=int(input("please enter a guess between 1 and 1000"))
 
-#raden welk nummer het is.
-
-while guess <= 8:
-     print('')
-     print('raad het.')
-
-     guessIt = input()
-     guessIt = int(guessIt)
-
-     guess+guess+8
-
-if guessIt < number:
-         print('te laag...')
-
-if guessIt > number:
-        print('te hoog...')
-
-if guessIt > number:
-
-    if number <= 20:
-        print('bijna')
-if guess == number:
-    
-    if guessIt == number:
-        guess = str(guess)
-    print('goed geraden...\nyou guess ' + guess + '... took u a while...\n')
-
-if guessIt != number:
-    number = str(number)
-    print('verkeerd... the number was ' + number)
-
-if number == True:
-    score += 1
-    
-print ('want to play again? y/n ')
-
-if "y":
-    print ('okay')
-    while guess <= 8:
-         print('')
-    print('raad het.')
-
-    guessIt = input()
-    guessIt = int(guessIt)
-
-    guess+guess+8
-
-    if guessIt < number:
-         print('te laag...')
-
-    if guessIt > number:
-        print('te hoog...')
-
-    if guessIt > number:
-
-        if number <= 20:
-            print('bijna')
-    if guess == number:
-    
-        if guessIt == number:
-            guess = str(guess)
-    print('goed geraden...\nyou guess ' + guess + '... took u a while...\n')
-
-    if guessIt != number:
-        number = str(number)
-    print('verkeerd... the number was ' + number)
-
-    if number == True:
-        score += 1
+    if guess > random_number:
+        print ("guess is too high.")
+    elif guess < random_number:
+        print ("guess is too low.")
     else:
-        print ('thats okay.. :(')
-        print (score)
-        quit
+        guessed = True
+
+    attempts += 1
+
+    #the while loop stop
+
+    print  ('you guessed it!\nit took you',attempts,"to guess",random_number)
+    print (guess)
+
